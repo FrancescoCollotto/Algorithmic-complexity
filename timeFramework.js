@@ -1,9 +1,11 @@
+const { hrtime } = require('process');
+
 const timeFramework = (data) => {
   const result = [];
   for(let arr of data) {
-    const start = Date.now();
+    const start = hrtime.bigint();
     arr.reverse();
-    const end = Date.now();
+    const end = hrtime.bigint();
     const time = end - start;
     result.push({size: arr.length, time});
   }
@@ -20,9 +22,6 @@ const createTestData = (step, limit) => {
   return listOfArrays;
 }
 
-// const timing = timeFramework(() => numbers.reverse());
-// console.log(timing)
-// const data = createTestData(5000, 100000);
-// reverseTimeList = timeFramework(data)
-// console.log(reverseTimeList)
-
+const data = createTestData(5000, 100000);
+reverseTimeList = timeFramework(data)
+console.log(reverseTimeList)
