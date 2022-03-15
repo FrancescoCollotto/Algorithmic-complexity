@@ -1,10 +1,12 @@
-
-
-const timeFramework = (testFunc) => {
-  const start = Date.now();
-  testFunc();
-  const end = Date.now();
-  const result = end - start;
+const timeFramework = (data) => {
+  const result = [];
+  for(let arr of data) {
+    const start = Date.now();
+    arr.reverse();
+    const end = Date.now();
+    const time = end - start;
+    result.push({size: arr.length, time});
+  }
   return result;
 }
 
@@ -20,5 +22,7 @@ const createTestData = (step, limit) => {
 
 // const timing = timeFramework(() => numbers.reverse());
 // console.log(timing)
-console.log(createTestData(1, 10))
+// const data = createTestData(5000, 100000);
+// reverseTimeList = timeFramework(data)
+// console.log(reverseTimeList)
 
