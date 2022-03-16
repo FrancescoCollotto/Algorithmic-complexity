@@ -15,7 +15,7 @@ const timeFramework = (data, testFunction) => {
   return result;
 }
 
-// create 2d array of random numbers increasing in dimension by step
+// create array of arrays increasing in size by step
 const createTestData = (step, limit) => {
   const listOfArrays = [];
   for(let i = step; i <= limit; i += step) {
