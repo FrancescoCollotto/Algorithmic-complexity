@@ -1,6 +1,7 @@
 const { hrtime } = require('process');
 const fs = require('fs');
 const path = require('path');
+const {reverse, reverseInPlace} = require('./algorithms/reverse');
 const dataFile = path.join(path.dirname(__filename), 'data.txt');
 
 const timeFramework = (data, testFunction) => {
@@ -19,7 +20,7 @@ const timeFramework = (data, testFunction) => {
 const createTestData = (step, limit) => {
   const listOfArrays = [];
   for(let i = step; i <= limit; i += step) {
-    const arrayOfNumbers = Array.from({length: i}, () => Math.floor(Math.random() * i));
+    const arrayOfNumbers = Array.from({length: i}, () => Math.floor(Math.random() * limit));
     listOfArrays.push(arrayOfNumbers);
   }
   return listOfArrays;
@@ -41,9 +42,6 @@ const writeFile = (content) => {
 }
 
 const data = createTestData(5000, 100000);
-const dataList = timeFramework(data, (arr) => {
-  // Algorithm to test on arr
-  arr.filter((value) => value % 2 === 0)
-})
+const dataList = timeFramework(data, functionToTestHere)
 const content = formatData(dataList);
 writeFile(content);

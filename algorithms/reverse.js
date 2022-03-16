@@ -8,4 +8,12 @@ const reverse = (arr) => {
   return reversedArray;
 }
 
-module.exports = reverse;
+const reverseInPlace = (arr) => {
+  for(let i = 0; i < arr.length; i++) {
+    let lastEl = arr.pop();
+    arr.splice(i, 0, lastEl)
+  }
+  return arr;
+}
+
+module.exports = {reverse, reverseInPlace};
