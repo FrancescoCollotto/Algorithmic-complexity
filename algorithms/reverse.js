@@ -1,8 +1,10 @@
 // Reverse an array without using the built-in function
 
 const reverse = (arr) => {
-
+  return [];
 }
+
+module.exports = reverse;
 
 /* INPUT         |        OUTPUT
   []             |  []
