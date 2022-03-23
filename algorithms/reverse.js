@@ -8,12 +8,20 @@ const reverse = (arr) => {
   return reversedArray;
 }
 
+// slower
 const reverseInPlace = (arr) => {
   for(let i = 0; i < arr.length; i++) {
     let lastEl = arr.pop();
+    // splice is a memory costly operation
     arr.splice(i, 0, lastEl)
   }
   return arr;
 }
 
-module.exports = {reverse, reverseInPlace};
+const reverseWithMap = (arr) => {
+  return arr.map((el, i) => {
+    return arr[arr.length-1-i];
+  })
+}
+
+module.exports = {reverse, reverseInPlace, reverseWithMap};

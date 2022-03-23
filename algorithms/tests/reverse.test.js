@@ -1,4 +1,4 @@
-const reverse = require('../reverse');
+const {reverse} = require('../reverse');
 
 describe('reverse', () => {
   it('return []', () => {
