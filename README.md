@@ -13,4 +13,19 @@ The results are shown in a google sheet chart.
 - you can change the array sizes as you like by changing inputs in createTestData function
 
 ## Findings
-I have tested 3 javascript built in functions and they all show linear beahvior when increasing array size:
+I have tested 3 javascript built-in functions and they all show linear behaviour when increasing array size:
+
+![Javascript built-in functions](./charts/JSmethods.png?raw=true)
+
+I tested my own implementation of the same functions (available in the algorithms folder):
+- my sort() show quadratic behaviour:
+
+![My sort function](./charts/mySort.png?raw=true)
+
+- my reverse() show a linear behaviour but has big irregularities:
+
+![My reverse function](./charts/myReverse.png?raw=true)
+
+- my filter() show a linear behaviour with small irregularities:
+
+![My filter function](./charts/myFilter.png?raw=true)
