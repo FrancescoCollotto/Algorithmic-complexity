@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const {reverse, reverseInPlace, reverseWithMap} = require('./algorithms/reverse');
 const {sort, alternativeSort} = require('./algorithms/sort');
+const filter = require('./algorithms/filter');
 const dataFile = path.join(path.dirname(__filename), 'data.txt');
 
 const timeFramework = (data, testFunction) => {
@@ -42,7 +43,11 @@ const writeFile = (content) => {
   }
 }
 
-const data = createTestData(5000, 100000);
-const dataList = timeFramework(data, reverse);
-const content = formatData(dataList);
-writeFile(content);
+try {
+  const data = createTestData(5000, 100000);
+  const dataList = timeFramework(data, addFunctionToTestHere);
+  const content = formatData(dataList);
+  writeFile(content);
+} catch(e) {
+  console.log('Have you added a function to test?');
+}
