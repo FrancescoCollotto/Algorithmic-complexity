@@ -2,7 +2,7 @@ const { hrtime } = require('process');
 const fs = require('fs');
 const path = require('path');
 const {reverse, reverseInPlace, reverseWithMap} = require('./algorithms/reverse');
-const {sort, alternativeSort} = require('./algorithms/sort');
+const {bubbleSort, selectionSort} = require('./algorithms/sort');
 const filter = require('./algorithms/filter');
 const dataFile = path.join(path.dirname(__filename), 'data.txt');
 
